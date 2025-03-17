@@ -3,38 +3,46 @@
     public interface IGenericRepository<T> where T : class
     {
         /// <summary>
-        /// returns a list of T
+        /// returns a list of Task<T>
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        Task<IReadOnlyList<T>> GetAsync<T>();
+        Task<IReadOnlyList<T>> GetAsync();
         /// <summary>
         /// return object of type T for a given id
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="id"></param>
-        /// <returns></returns>
-        Task<T> GetAsync<T>(long id);
+        /// <returns>Task<T></returns>
+        Task<T> GetAsync(long id);
         /// <summary>
-        /// create a new object of type T and return it
+        /// create a new object of type T
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
-        /// <returns></returns>
-        Task<T> AddAsync<T>(T entity);
+        /// <returns>Task<entity></returns>
+        Task<T> AddAsync(T entity);
         /// <summary>
         /// update T object
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
         /// <returns></returns>
-        Task<T> UpdateAsync<T>(T entity);
+        Task UpdateAsync(T entity);
         /// <summary>
         /// delete T object
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="id"></param>
+        /// <param name="entity"></param>
         /// <returns></returns>
-        Task DeleteAsync<T>(long id);
+        Task DeleteAsync(T entity);
     }
 }
+
+//public interface IAsyncRepository<T> where T : class
+//{
+//    Task<T> GetByIdAsync(Guid id);
+//    Task<IReadOnlyList<T>> ListAllAsync();
+//    Task<T> AddAsync(T entity);
+//    Task UpdateAsync(T entity);
+//    Task DeleteAsync(T entity);
+//}
