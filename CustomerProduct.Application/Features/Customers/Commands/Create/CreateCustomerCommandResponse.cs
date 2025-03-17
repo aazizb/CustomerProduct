@@ -1,5 +1,4 @@
-﻿using CustomerProduct.Application.Features.Customers.Commands.DTOs;
-using CustomerProduct.Application.Responses;
+﻿using CustomerProduct.Application.Responses;
 
 namespace CustomerProduct.Application.Features.Customers
 {

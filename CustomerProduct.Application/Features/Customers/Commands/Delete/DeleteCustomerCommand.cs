@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using MediatR;
 
-namespace CustomerProduct.Application.Features.Customers.Commands.Delete
+namespace CustomerProduct.Application.Features.Customers
 {
     public class DeleteCustomerCommand : IRequest
     {

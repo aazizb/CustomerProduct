@@ -2,13 +2,15 @@
 using AutoMapper;
 
 using CustomerProduct.Application.Contracts.Persistence;
-using CustomerProduct.Application.Features.Customers.Commands.DTOs;
 using CustomerProduct.Domain.Entities;
 
 using MediatR;
 
 namespace CustomerProduct.Application.Features.Customers
 {
+    /// <summary>
+    /// Create a customer and return the newly created customer along with validation errors
+    /// </summary>
     public class CreateCustomeerCommandHandler : IRequestHandler<CreateCustomerCommand, CreateCustomerCommandResponse>
     {
         public CreateCustomeerCommandHandler(IMapper mapper, IGenericRepository<Customer> repository)

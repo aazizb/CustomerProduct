@@ -1,4 +1,4 @@
-﻿namespace CustomerProduct.Application.Features.Customers.Commands.DTOs
+﻿namespace CustomerProduct.Application.Features.Customers
 {
     public class CreateCustomerDto
     {
