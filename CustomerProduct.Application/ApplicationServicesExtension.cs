@@ -2,10 +2,10 @@
 
 namespace CustomerProduct.Application
 {
-    public static class ApplicationServices
+    public static class ApplicationServicesExtension
     {
         /// <summary>
-        /// extension method to register services
+        /// extension method to register application services
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>

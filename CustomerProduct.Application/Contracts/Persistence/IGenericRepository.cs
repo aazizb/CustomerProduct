@@ -14,7 +14,7 @@
         /// <typeparam name="T"></typeparam>
         /// <param name="id"></param>
         /// <returns>Task<T></returns>
-        Task<T> GetAsync(long id);
+        Task<T> GetAsync(int id);
         /// <summary>
         /// create a new object of type T
         /// </summary>
@@ -37,12 +37,3 @@
         Task DeleteAsync(T entity);
     }
 }
-
-//public interface IAsyncRepository<T> where T : class
-//{
-//    Task<T> GetByIdAsync(Guid id);
-//    Task<IReadOnlyList<T>> ListAllAsync();
-//    Task<T> AddAsync(T entity);
-//    Task UpdateAsync(T entity);
-//    Task DeleteAsync(T entity);
-//}

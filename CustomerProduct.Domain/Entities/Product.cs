@@ -8,5 +8,6 @@
         public int NumeracioTerminal { get; set; }
         public string SoldAt { get; set; }
         public int CustomerId { get; set; }
+        public Customer Customer { get; set; }  // navigation property
     }
 }
