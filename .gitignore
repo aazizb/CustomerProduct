@@ -7,3 +7,5 @@
 /CustomerProduct.Application/obj
 /CustomerProduct.Domain/bin/Debug/net8.0
 /CustomerProduct.Domain/obj
+/CustomerProduct.Persistence/bin/Debug/net8.0
+/CustomerProduct.Persistence/obj
