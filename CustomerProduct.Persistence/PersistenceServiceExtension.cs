@@ -18,7 +18,7 @@ namespace CustomerProduct.Persistence
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration) 
         {
             services.AddDbContext<CustomerProductDbContext>(options => 
-                options.UseSqlServer(configuration.GetConnectionString("CustomeProductCS")));
+                options.UseSqlServer(configuration.GetConnectionString("CustomerProductCS")));
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
