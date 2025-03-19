@@ -21,13 +21,24 @@ namespace CustomerProduct.Infrastructure
             Logger.LogInformation("Handling request: {RequestName} with data: {@Request}", requestName, request);
 
             var stopwatch = Stopwatch.StartNew();
-            var response = await next();
-            stopwatch.Stop();
+            try
+            {
+                var response = await next();
+                stopwatch.Stop();
 
-            Logger.LogInformation("Handled request: {RequestName} - Execution Time: {ElapsedMilliseconds}ms - Response: {@Response}",
-                requestName, stopwatch.ElapsedMilliseconds, response);
+                Logger.LogInformation("Handled request: {RequestName} - Execution Time: {ElapsedMilliseconds}ms - Response: {@Response}",
+                    requestName, stopwatch.ElapsedMilliseconds, response);
 
-            return response;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                stopwatch.Stop();
+                Logger.LogError(ex, "Request {RequestName} failed after {ElapsedMilliseconds}ms with error: {ErrorMessage}",
+                    requestName, stopwatch.ElapsedMilliseconds, ex.Message);
+
+                throw; // Re-throw the exception to let global exception middleware handle it
+            }
         }
     }
 
