@@ -9,3 +9,5 @@
 /CustomerProduct.Domain/obj
 /CustomerProduct.Persistence/bin/Debug/net8.0
 /CustomerProduct.Persistence/obj
+/CustomerProduct.Api/bin/Debug/net8.0
+/CustomerProduct.Api/obj
