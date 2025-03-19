@@ -11,3 +11,5 @@
 /CustomerProduct.Persistence/obj
 /CustomerProduct.Api/bin/Debug/net8.0
 /CustomerProduct.Api/obj
+/CustomerProduct.Infrastructure/obj
+/CustomerProduct.Infrastructure/bin/Debug/net8.0
