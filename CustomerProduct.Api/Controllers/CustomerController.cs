@@ -17,6 +17,13 @@ namespace CustomerProduct.Api.Controllers
             var result = await Mediator.Send(new GetCustomerListQuery());
             return Ok(result);
         }
+        [HttpGet("{id:int}", Name = "Customer")]
+        public async Task<ActionResult<CustomerDetailVm>> GetById(int id)
+        {
+            var getCustomerDetailVm = new GetCustomerDetailQuery() { Id = id};
+            var response = await Mediator.Send(getCustomerDetailVm);
+            return Ok(response);
+        }
         [HttpPost(Name = "CreateCustomer")]
         public async Task<ActionResult<CreateCustomerCommandResponse>> Create([FromBody] CreateCustomerCommand createCategoryCommand)
         {
