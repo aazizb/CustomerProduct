@@ -11,9 +11,9 @@ namespace CustomerProduct.Application.Features.Customers
     /// <summary>
     /// Create a customer and return the newly created customer along with validation errors
     /// </summary>
-    public class CreateCustomeerCommandHandler : IRequestHandler<CreateCustomerCommand, CreateCustomerCommandResponse>
+    public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, CreateCustomerCommandResponse>
     {
-        public CreateCustomeerCommandHandler(IMapper mapper, IGenericRepository<Customer> repository)
+        public CreateCustomerCommandHandler(IMapper mapper, IGenericRepository<Customer> repository)
         {
             Mapper = mapper;
             Repository = repository;
@@ -38,7 +38,7 @@ namespace CustomerProduct.Application.Features.Customers
             }
             if (response.Success)
             {
-                Customer customer = new() { FamilyName = request.FamilyName, GivenName = request.GivenName };
+                Customer customer = new() {DocType = request.DocType, DocNum = request.DocNum, Email = request.Email, CustomerId = request.CustomerId, GivenName = request.GivenName, FamilyName = request.FamilyName, Phone = request.Phone};
 
                 customer = await Repository.AddAsync(customer);
                 response.Customer = Mapper.Map<CreateCustomerDto>(customer);
