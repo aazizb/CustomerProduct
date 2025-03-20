@@ -39,7 +39,7 @@ namespace CustomerProduct.Persistence
                 .HasOne(p => p.Customer)  // Product has one Customer
                 .WithOne(c => c.Product)  // Customer has one Product
                 .HasForeignKey<Product>(p => p.CustomerId) // Product.CustomerId is FK
-                .HasPrincipalKey<Customer>(c => c.CustomerId); // CustomerId is unique key
+                .HasPrincipalKey<Customer>(c => c.Id); // Customer.Id is primary key
 
             base.OnModelCreating(modelBuilder);
         }

@@ -5,7 +5,7 @@
 namespace CustomerProduct.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class initialdb : Migration
+    public partial class initialDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
