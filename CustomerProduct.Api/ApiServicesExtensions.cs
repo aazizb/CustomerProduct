@@ -15,7 +15,17 @@ namespace CustomerProduct.Api
 
             builder.Host.UseSerilog();
 
+            builder.Services.AddCors(options =>
+            {               // should not in real application
+                options.AddPolicy("AllowAll", policy =>
+                    policy.AllowAnyOrigin()   // allow requests from any origin
+                          .AllowAnyMethod()   // allow all HTTP methods 
+                          .AllowAnyHeader()); // allow all headers
+            });
+
+
             builder.Services.AddEndpointsApiExplorer();
+
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddControllers();
@@ -28,6 +38,7 @@ namespace CustomerProduct.Api
         }
         public static WebApplication ConfigurePipeline(this WebApplication app)
         {
+            app.UseCors("AllowAll");// should not in real application
 
             if (app.Environment.IsDevelopment())
             {
